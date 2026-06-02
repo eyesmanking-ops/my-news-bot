@@ -1,7 +1,12 @@
 name: 執行新聞爬蟲
 
 on:
-  workflow_dispatch: # 只有這行：純手動觸發，您在手機 App 點擊才會執行，絕不自動亂跑
+  # 1. 自動定期執行：設定在每小時的第 5 分鐘（GitHub 會視伺服器狀況排隊延遲 10-30 分鐘執行）
+  schedule:
+    - cron: '5 * * * *'
+
+  # 2. 手動觸發：完整保留您原本的設定，您隨時可以在手機 App 或網頁點擊按鈕立即執行
+  workflow_dispatch:
 
 jobs:
   run-crawler:
