@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 設定台灣時區
-TW = timedelta(hours=8)
+TW = timedelta(hours=18)
 def get_now_tw():
     return datetime.utcnow() + TW
 
